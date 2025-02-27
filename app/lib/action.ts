@@ -62,6 +62,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
         console.log(err)
     }
     revalidatePath('/dashboard/invoices');
+    revalidatePath('/dashboard');
     redirect('/dashboard/invoices');//Not inside try because redirect throws an error, only redirects if try is successful
 }
 
@@ -93,6 +94,7 @@ export async function updateInvoice(id: string, prevState: State, formData: Form
         console.log(err)
     }
     revalidatePath('/dashboard/invoices');
+    revalidatePath('/dashboard');
     redirect('/dashboard/invoices');
 }
 
@@ -103,6 +105,7 @@ export async function deleteInvoice(id: string) {
         console.log(err)
     }
     revalidatePath('/dashboard/invoices');
+    revalidatePath('/dashboard');
 }
 
 export async function authenticate(
